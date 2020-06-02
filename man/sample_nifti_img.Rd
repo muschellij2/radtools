@@ -4,10 +4,12 @@
 \name{sample_nifti_img}
 \alias{sample_nifti_img}
 \title{A sample NIfTI-1 image}
-\format{List with one element `data`
+\format{
+List with one element `data`
 \describe{
   \item{data}{Object of class `nifti`}
-}}
+}
+}
 \source{
 \url{https://nifti.nimh.nih.gov/nifti-1/data}
 }

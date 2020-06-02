@@ -14,7 +14,7 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: oro.dicom, dplyr, Hmisc, oro.nifti, magrittr, methods, TCIApathfinder, R.utils, xfun
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.0
 Suggests: testthat, covr, knitr, rmarkdown, rvest, hashmap, stringr, xml2
 VignetteBuilder: knitr
 NeedsCompilation: no

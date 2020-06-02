@@ -4,11 +4,13 @@
 \name{sample_dicom_img}
 \alias{sample_dicom_img}
 \title{A sample DICOM image}
-\format{A `dicomdata` object; list with elements `hdr` and `img`
+\format{
+A `dicomdata` object; list with elements `hdr` and `img`
 \describe{
   \item{hdr}{DICOM header}
   \item{img}{DICOM image data}
-}}
+}
+}
 \source{
 \url{http://www.pcir.org/researchers/downloads_available.html}
 }
