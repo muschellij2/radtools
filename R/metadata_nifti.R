@@ -15,6 +15,7 @@ img_dimensions.nifti1data <- function(img_data) {
 
 #' @importFrom methods slot
 #' @method validate_metadata nifti1data
+#' @export
 validate_metadata.nifti1data <- function(img_data, stop = TRUE) {
   # Rules as in https://nifti.nimh.nih.gov/nifti-1/documentation/faq#Q4
   fail <- function(msg) {

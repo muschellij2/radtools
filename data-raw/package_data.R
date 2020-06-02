@@ -9,15 +9,16 @@ timestamp_dicom_standard <- Sys.time()
 tables <- rvest::html_nodes(webpage, "table")
 
 # Parse the first table
-data_dict <- rbind(rvest::html_table(tables[[1]], fill = T),
-                   rvest::html_table(tables[[2]], fill = T),
-                   rvest::html_table(tables[[3]], fill = T))
+data_dict <- rbind(rvest::html_table(tables[[1]], fill = TRUE),
+                   rvest::html_table(tables[[2]], fill = TRUE),
+                   rvest::html_table(tables[[3]], fill = TRUE))
 colnames(data_dict)[[6]] <- "Notes"
 
 # Remove zero-length white spaces from keywords
 data_dict$Keyword <- sapply(data_dict$Keyword, function(x) gsub("\\s", "", x))
 
 # Create mappings of DICOM tag to attribute name/keyword
+# remotes::install_github("nathan-russell/hashmap")
 tag_to_keyword <- hashmap::hashmap(data_dict$Tag, data_dict$Keyword)
 tag_to_name <- hashmap::hashmap(data_dict$Tag, data_dict$Name)
 keyword_to_tag <- hashmap::hashmap(data_dict$Keyword, data_dict$Tag)

@@ -56,6 +56,7 @@ header_value <- function(img_data, field) {
 #' @param img_data Image data returned by e.g. \code{\link{read_dicom}} or \code{\link{read_nifti1}}
 #' @param stop If true, raise error when validation fails. If false, raise warnings for each failed element.
 #' @keywords internal
+#' @export
 validate_metadata <- function(img_data, stop = TRUE) {
   UseMethod("validate_metadata", img_data)
 }

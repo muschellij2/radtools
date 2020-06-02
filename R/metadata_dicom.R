@@ -68,7 +68,7 @@ dicom_validate_has_field <- function(dicom_data, field) {
 dicom_validate_keyword <- function(keyword, stop = TRUE) {
   if(!keyword %in% dicom_all_valid_header_keywords()) {
     msg <- paste("Header keyword does not conform to DICOM standard ", dicom_standard_version(),": ", keyword, sep = "")
-    if(stop) stop(msg) else warning(msg, immediate. = T)
+    if(stop) stop(msg) else warning(msg, immediate. = TRUE)
   }
 }
 
@@ -98,6 +98,7 @@ dicom_validate_group_element <- function(group, element, stop = TRUE) {
 }
 
 #' @method validate_metadata dicomdata
+#' @export
 validate_metadata.dicomdata <- function(img_data, stop = TRUE) {
   elts <- data.frame(group = character(), element = character(), name = character())
   for(i in length(img_data$hdr)) {
